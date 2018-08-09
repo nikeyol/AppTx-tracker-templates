@@ -1,2 +1,2 @@
 # AppTx-tracker-template
-Pivotal Tracker template project for AppTx replatform
+Pivotal Tracker template for AppTx replatform
