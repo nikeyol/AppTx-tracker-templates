@@ -1,6 +1,6 @@
 # AppTx-tracker-templates
 
-A repository for **Pivotal Tracker Project templates** for AppTx ***replatform*** and ***modernization*** tasks.
+A repository for **Pivotal Tracker Project templates** for AppTx ***replatform*** and ***modernization***.
 
 ## replatform project template
 
