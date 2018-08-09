@@ -1,7 +1,9 @@
 # AppTx-tracker-templates
 
-## Pivotal Tracker template for ***AppTx application replatform***
+A repository for ***Pivotal Tracker Project templates*** for AppTx _replatform_ and _modernization_ tasks.
 
-The [apptx_tracker_template.csv](https://github.com/pivotalservices/AppTx-tracker-template/blob/master/apptx_tracker_template.csv) contains a set of User Stories for a typical AppTx application replatform effort. 
+## replatform project template
 
-The CSV file is imported into the Pivotal Tracker to create a Tracker project for _each application replatform_ effort in an AppTx engagement.
+The [apptx_tracker_template.csv](https://github.com/pivotalservices/AppTx-tracker-template/blob/master/apptx_tracker_template.csv) contains a set of User Stories for a typical AppTx application replatform effort. This file is imported into the Pivotal Tracker to create a Tracker project for _each application replatform_ effort in an AppTx engagement.
+
+## modernization project template
