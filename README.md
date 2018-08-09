@@ -10,3 +10,4 @@ The [apptx_replatform_project_template.csv](https://github.com/pivotalservices/A
 
 # Notes:
 - The `<acme>` placeholder in the template file should be replaced with the _actual_ application name _before_ importing the template into the Pivotal Tracker.
+- The _number_ in the User Story title indicates the _order/sequence_ of stories in a project.
