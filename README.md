@@ -1,5 +1,5 @@
 # AppTx-tracker-templates
-A repository for **Pivotal Tracker Project templates** for AppTx ***replatform*** and ***modernization***.
+**Pivotal Tracker Project templates** for AppTx ***replatform*** and ***modernization***.
 
 ## Author
 Prashanth Belathur - pbelathur@pivotal.io
