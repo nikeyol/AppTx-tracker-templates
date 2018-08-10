@@ -1,7 +1,7 @@
 # AppTx-tracker-templates
 **Pivotal Tracker Project templates** for AppTx ***replatform*** and ***modernization***.
 
-Templates to create Pivotal Tracker project with a set of common user stories.
+The _templates_ in this repo can be used to create a tracker project with a common set of user stories with well-defined acceptance criteria for the AppTx _replatform_ and _modernization_ efforts and, helps to reduce time/effort to create trackers during customer engagements.
 
 ## Author
 Prashanth Belathur - pbelathur@pivotal.io
