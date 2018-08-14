@@ -8,9 +8,13 @@ The template file is imported into the Pivotal Tracker to create a project for _
 ## Author
 **Prashanth Belathur** - pbelathur@pivotal.io
 
-## [Replatform project template (_Java_)](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_project_template.csv)
+## Replatform tracker templates
+- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_project_template.csv)
+- .NET
 
-## [Modernization project template (_Java_)](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_modernization_project_template.csv)
+## Modernization tracker templates
+- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_modernization_project_template.csv)
+- .NET
 
 ## Notes:
 - The `<acme>` placeholder in the template file should be replaced with the _actual_ application name _before_ importing the template into the Pivotal Tracker to create a new Tracker project. 
