@@ -10,9 +10,9 @@ BECAUSE I want to build/run the _replatformed_ <acme> application locally on the
 "
 "2. Code Organization, Dependency Management and Compilation of the <acme> Spring Boot app",replatform,feature,"	AS an PRODUCT OWNER
 I WANT to ensure:
-1. the codebase is organized in a Maven structure.
-2. dependencies for the builds are available from _non local_ artifact repositories (_Nexus, Artifactory, S3_).
-3. codebase can be built successfully _locally_ in the developer paring stations using _maven_ or _gradle_.
+1. the codebase is built by a modern build tool such as Maven or Gradle
+2. dependencies for the builds are resolved from _non local_ artifact repositories (_Nexus, Artifactory, S3_).
+3. codebase can be built successfully _locally_ by the developer using the build tool's CLI without depending on an IDE.
 
 BECAUSE I want a standard codebase structure and build mechanism.
 
@@ -21,12 +21,12 @@ BECAUSE I want a standard codebase structure and build mechanism.
 - verify use of remote artifact repositories to resolve dependencies.
 - application can be build successfully into a deployable package using _maven or gradle CLI_ on the paring stations.
 "
-3. Setup Github Repo,replatform,feature,"	AS an PRODUCT OWNER
-I WANT to setup repository in client's local or external Github to store codebase for the replatformed <acme> application
+3. Setup Dedicated Application Git Repository,replatform,feature,"	AS an PRODUCT OWNER
+I WANT to setup repository in client's local or external Git to store codebase for the replatformed <acme> application
 BECAUSE I want a standard SCM mechanism for the codebase.
 
 ***Acceptance Criteria***
-- a Github repository containing a markdown file with the project overview and source code for the replatformed <acme> application.
+- a Git repository containing a markdown file with the project overview and source code for the replatformed <acme> application.
 - all Pivots and Clients on the project have the _full access_ to the repository."
 4. Migrate application properties/settings,replatform,feature,"	AS an PRODUCT OWNER
 I WANT to migrate all the properties/settings of the <acme> application to the Spring Boot's `application.yml`
@@ -88,15 +88,16 @@ BECAUSE I want to monitor the application/database state, gather metrics and und
 -  /health and /info are the only enabled endpoints by default.
 - /health will display only the _Status: UP or DOWN_ for unauthorized access over HTTP.
 - /info will display the _application name, description and version_."
-11. Manual deploy of the <acme> Spring Boot app to PCF,replatform,feature,"	AS an PRODUCT OWNER
-I WANT to build the application using maven or gradle and, deploy the application to the PCF using CF CLI from the paring station.
-BECAUSE I want to ensure the build/deploy from the paring stations is successful _before replatforming_.
+14. Build/deploy <acme> Spring Boot app WITHOUT the CI/CD pipeline,replatform,feature,"		AS an PRODUCT OWNER
+I SHOULD be able to build the application using maven or gradle and, deploy the application to the PCF using CF CLI from the paring station.
+BECAUSE I want to ensure the build/deploy from the paring stations is successful.
 
 ***Acceptance Criteria***
 - _local_ maven build on the paring station.
 - _deploy_ to Clients's PCF using CF CLI from the paring station.
 - _verify_ the application was deployed successfully using the PCF App Console.
-- verify the app is _receiving_ traffic by accessing actuator url or index/landing page."
+- verify the app is receiving traffic by accessing actuator url OR the index/landing page.
+"
 "12. Unit, Integration and Smoke Tests for the <acme> Spring Boot app",replatform,feature,"	AS an PRODUCT OWNER
 I WANT to create unit, integration, functional and smoke tests for the <acme> Spring Boot app
 BECAUSE I want to incorporate TDD principles, improve code quality and test coverage for the <acme> Spring Boot app.
@@ -115,17 +116,7 @@ BECAUSE I want to measure _code coverage_, _cyclomatic complexity_ and, detect _
 - static code analysis is also automatically executed for each build.
 - the builds _should fail_ if the code coverage is _below_ a specified threshold.
 "
-14. Build/deploy <acme> Spring Boot app WITHOUT the CI/CD pipeline,replatform,feature,"		AS an PRODUCT OWNER
-I SHOULD be able to build the application using maven or gradle and, deploy the application to the PCF using CF CLI from the paring station.
-BECAUSE I want to ensure the build/deploy from the paring stations is successful.
-
-***Acceptance Criteria***
-- _local_ maven build on the paring station.
-- _deploy_ to Clients's PCF using CF CLI from the paring station.
-- _verify_ the application was deployed successfully using the PCF App Console.
-- verify the app is receiving traffic by accessing actuator url OR the index/landing page.
-"
-15. Setup CI/CD Pipeline for the <acme> Spring Boot app,replatform,feature,"	AS an PRODUCT OWNER
+14. Setup CI/CD Pipeline for the <acme> Spring Boot app,replatform,feature,"	AS an PRODUCT OWNER
 I SHOULD have the ability for automated build and deploy of the the <acme> Spring Boot app to PCF using CI/CD
 BECAUSE I want to ensure the automated build/deploy pipelines are configured and tested before regular use.
 
@@ -140,7 +131,7 @@ BECAUSE I want to ensure the automated build/deploy pipelines are configured and
 
 **Implementation notes**
 - Spring Cloud tools and migration details will come here"
-16. Automatic build/deploy to PCF for the <acme> Spring Boot app,replatform,feature,"	AS an PRODUCT OWNER
+15. Automatic build/deploy to PCF for the <acme> Spring Boot app,replatform,feature,"	AS an PRODUCT OWNER
 I SHOULD have the ability for automated build and deployment of the <acme> Spring Boot app to PCF
 BECAUSE I want to eliminate the manual build/deploy process for the <acme> Spring Boot app.
 
@@ -148,3 +139,11 @@ BECAUSE I want to eliminate the manual build/deploy process for the <acme> Sprin
 - build and deploy the <acme> Spring Boot app to PCF using CI/CD pipelines without _manual intervention_.
 - verify the <acme> Spring Boot app was _deployed successfully_ using the PCF App Console.
 - verify the <acme> Spring Boot app is _receiving traffic_ by accessing actuator url OR the index/landing page."
+16. Externalize configuration in Spring Cloud Config Server,replatform,feature,"AS an PRODUCT OWNER
+I WANT to externalize the configuration of <acme> Spring Boot app so that I can control changes to this configuration for running applications
+BECAUSE I need to control access seperately from the source code and need to reconfigure running applications without a rebuild/restart.
+
+***Acceptance Criteria***
+- The application manifest binds the application to a config-service instance
+- The application's local application properties/yml files have only basic and local configuration, and the rest is pulled from config-server
+- The application successfully runs and passes all smoke tests in PCF when connected to config server"
