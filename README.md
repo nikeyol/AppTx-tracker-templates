@@ -9,15 +9,15 @@ The template file is imported into the Pivotal Tracker to create a project for _
 **Prashanth Belathur** - pbelathur@pivotal.io
 
 ## Replatform tracker templates
-- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_project_template.csv)
-- .NET
+- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_tracker_template_java.csv)
+- [.NET](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_tracker_template_dotnet.csv)
 
 ## Modernization tracker templates
-- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_modernization_project_template.csv)
+- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_modernization_tracker_template_java.csv)
 - .NET
 
 ## Notes:
-- The `<acme>` placeholder in the template file should be replaced with the _actual_ application name _before_ importing the template into the Pivotal Tracker to create a new Tracker project. 
+- The `<acme>` placeholder in the template file should be replaced with the _actual_ application name _before_ importing the template into the Pivotal Tracker to create a new Tracker project.
 - The _number_ in the User Story title indicates the _order/sequence_ of stories in a project.
 
 ## Acknowledgments
