@@ -5,6 +5,7 @@ The _templates_ in this repo can be used to create a tracker project with a comm
 
 The template file is _imported_ into the Pivotal Tracker to create a project for _each_ application _replatform_ or _modernization_ effort in an AppTx engagement.
 
+![](tracker-replatform-java.png)
 
 ## Author
 **Prashanth Belathur** - pbelathur@pivotal.io
