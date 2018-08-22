@@ -82,7 +82,7 @@ BECAUSE currently PCF does _not_ support Windows authentication.
 - the _replatformed_ application should continute to support existing Windows Authentication logins.
 - the alterantive mechanism is to use security tokens from external identity providers (UAA or Siteminder etc.)
 "
-9. Configure actuator/health-checks,"12f-port-binding, replatform-dot-net",feature,"			AS a PRODUCT OWNER
+9. Configure Actuator/Health-checks,"12f-port-binding, replatform-dot-net",feature,"			AS a PRODUCT OWNER
 I WANT to expose operational (_health, metrics, info, dump, env_) information of the _replatformed_ <acme> .NET app,
 BECAUSE I want to monitor the application/database state, gather metrics and understand traffic for the _replatformed_ <acme> .NET.
 
@@ -131,7 +131,7 @@ BECAUSE I want to _eliminate_ the manual build/deploy process for the _replatfor
 - build and deploy the application to PCF using CI/CD pipelines without _manual intervention_.
 - verify the application was _deployed successfully_ using the PCF App Console.
 - verify the application is _receiving traffic_."
-14. deploy and testing of the <acme> .NET application on multiple PCF instances,"12f-concurrency, replatform-dot-net",feature,"	AS a PRODUCT OWNER
+14. Deployment and Testing of the <acme> .NET application on multiple PCF instances,"12f-concurrency, replatform-dot-net",feature,"	AS a PRODUCT OWNER
 I SHOULD have the ability to deploy the _replatformed_ <acme> .NET app to multiple PCF instances,
 BECAUSE I want to have the ability to scale the application _manually._
 
