@@ -1,13 +1,13 @@
 Title,Labels,Type,Description
-1. Lift and Shift the <acme> .NET application to run on PCF,"12f-processes, replatform-dot-net",feature,"			AS a PRODUCT OWNER
+1. Lift and Shift the <acme> .NET application to run on PCF,"12f-processes, replatform-dot-net",feature,"AS a PRODUCT OWNER
 I WANT to create a new <acme> application using existing .NET codebase and all the _third party_ dependencies using the _lift_ and _shift_ technique,
 BECAUSE I want to build/run the _replatformed_ <acme> application locally on the paring stations.
 
 ***Acceptance Criteria***
 - the _entire codebase_ of the <acme> application is migrated to the _replatformed_ application.
 - verify the _replatformed_ application can be built and run locally on the paring stations, with _minimum_ code/configuration changes.
-- the code/configuration changes_ should be documented in this tracker ticket.
-- a recipe outlining the _lift_ and _shift_techniques used in the migration of existing .NET applicaton to PCF must be created and, reviewed with the team.  
+- the code/configuration changes should be documented in this tracker ticket.
+- a recipe outlining the _lift_ and _shift_ techniques used in the migration of existing .NET applicaton to PCF must be created and, reviewed with the team.  
 - all library dependencies should be part of the binary artifact.
 "
 2. Migrate application to latest .NET framework,"12f-codebase, replatform-dot-net",feature,"	AS a PRODUCT OWNER
@@ -19,24 +19,23 @@ BECAUSE I want to make use of Steeltoe and other .NetStandard libraries.
 ***Acceptance Criteria***
 - a recipe outlining the techniques used in the migration of MVC apps to the .NET CORE must be created and reviewed with the team. 
 - the migrated .NET application should run without any errors in the local paring station."
-"3. Migrate application properties, configuration and registry","12f-config, replatform-dot-net",feature,"		AS a PRODUCT OWNER
+"3. Migrate application properties/settings, configuration and registry","12f-config, replatform-dot-net",feature,"		AS a PRODUCT OWNER
 I WANT to migrate ...
-1. the applicaton settings to the CF `manifest.yml`
+1. the applicaton properties/settings to the CF `manifest.yml` with appropriate memory, disk space, etc.
 2. the configurations by injecting via ENV/VCAP_SERVICES/Config Server using ___Steeltoe integration___
 3. by removing all Windows registry dependencies
-and tune the basic properties like memory, disk space etc.,
 BECAUSE I want all the application-specific settings and configuration to be _externalized_ from the _replatformed_ application.
 
 ***Acceptance Criteria***
-- all settings must be defined in the CF `manifest.yml`
+- all application properties/settings must be defined in the CF `manifest.yml`
 - the application is able to access the configurations in the _following order_
    1. AppSettings.json
    2. Environment Variables
-   3. VCAP services§§
+   3. VCAP services
    4. Config Server
 - the _replatformed application_ can be run in PCF after the _removal_ of the _registry dependencies_
-- a recipe outlining the techniques used in the migration of properties must be created and reviewed with the team. "
-4. Migrate to Cloud Native Logging,"12f-logs, replatform (.net), replatform-dot-net",feature,"			AS a PRODUCT OWNER
+- recipe(s) outlining the techniques used in the migration of properties must be created and reviewed with the team. "
+4. Migrate to Cloud Native Logging,"12f-logs, replatform-dot-net",feature,"			AS a PRODUCT OWNER
 I WANT to configure the _replatformed_ <acme> .NET app to support _cloud native logging_  
 BECAUSE I want the _replatformed_ <acme> app to be _12 Factor_ compliant for Logging
 
@@ -59,16 +58,16 @@ BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ complian
 
 ***Acceptance Criteria***
 - the _replatformed_ application should use a standard cloud cache (Redis).
-- a recipe outlining the techniques used in the migration to distributed cache using _Steeltoe_ must be created and, reviewed with the team.  "
-6. Migrate Secrets to Vault,"12f-backing-services, replatform-dot-net",feature,"		AS a PRODUCT OWNER
-I WANT to migrate the _secrets_ in the <acme> .NET application to a _vault_,  
+- a recipe outlining the techniques used in the migration to distributed cache using _Steeltoe_ must be created and reviewed with the team.  "
+6. Migrate Secrets/Certs to Vault,"12f-backing-services, replatform-dot-net",feature,"		AS a PRODUCT OWNER
+I WANT to migrate the _secrets/certs_ in the <acme> .NET application to _vault_,  
 BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
 
 ***Acceptance Criteria***
-- the _replatformed_ application should only use _vault_ when running in PCF and, should **not** use access/use any _SMS files_.
+- the _replatformed_ application should only use _vault_ when running in PCF and, should **not** use access/use any like Windows Cert Store.
 "
-7. Migrate Session Handling to Cloud,"12f-backing-services, replatform-dot-net",feature,"		AS a PRODUCT OWNER
-I WANT to migrate the _in-application_ session handling capabilities in the <acme> .NET application to a _distributed cloud cache_,  
+7. Migrate Session Handling to Cloud,"12f-backing-services, 12f-processes, replatform-dot-net",feature,"		AS a PRODUCT OWNER
+I WANT to migrate the _in-proc_ session or _asp session state provider_ handling capabilities in the <acme> .NET application to a _distributed cloud cache_ session providers,  
 BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
 
 ***Acceptance Criteria***
@@ -104,7 +103,7 @@ BECAUSE I want to incorporate TDD principles, improve code quality and test cove
 - unit, integration and functional tests exist in separate modules in the codebase.
 - at the minimum we require integration and smoke tests."
 11. Build/deploy replatformed <acme> .NET app WITHOUT the CI/CD pipeline,"12f-build-release-run, replatform-dot-net",feature,"		AS a PRODUCT OWNER
-I SHOULD be able to build the _replatformed_ .NET application using a standard build tool and, deploy the application to the PCF using CF CLI from the paring station.
+I SHOULD be able to build the _replatformed_ .NET application using a standard build tool and, deploy the application(single instance) to the PCF using CF CLI from the paring station.
 BECAUSE I want to ensure the build/deploy from the paring stations is successful.
 
 ***Acceptance Criteria***
