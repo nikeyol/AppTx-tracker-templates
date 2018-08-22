@@ -1,54 +1,89 @@
-Title,Labels,Type,Description
-1. Lift and Shift the <acme> .NET application to run on PCF,"12f-processes, replatform-dot-net",feature,"		AS an PRODUCT OWNER
-I WANT to create a new <acme> application using existing .NET codebase using the _lift_ and _shift_ technique,
+Id,Title,Labels,Iteration,Iteration Start,Iteration End,Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Owned By
+159971810,1. Lift and Shift the <acme> .NET application to run on PCF,"12f-processes, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"			AS a PRODUCT OWNER
+I WANT to create a new <acme> application using existing .NET codebase and all the _third party_ dependencies using the _lift_ and _shift_ technique,
 BECAUSE I want to build/run the _replatformed_ <acme> application locally on the paring stations.
 
 ***Acceptance Criteria***
 - the _entire codebase_ of the <acme> application is migrated to the _replatformed_ application.
 - verify the _replatformed_ application can be built and run locally on the paring stations, with _minimum_ code/configuration changes.
 - the code/configuration changes_ should be documented in this tracker ticket.
-"
-"2. Migrate application properties, configuration and registry","12f-config, replatform-dot-net",feature,"	AS an PRODUCT OWNER
+- a recipe outlining the _lift_ and _shift_techniques used in the migration of existing .NET applicaton to PCF must be created and, reviewed with the team.  
+- all library dependencies should be part of the binary artifact.
+",https://www.pivotaltracker.com/story/show/159971810,
+159971825,2. Migrate application to latest .NET framework,"12f-codebase, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"	AS a PRODUCT OWNER
 I WANT to migrate ...
-1. the properties settings to the CF `manifest.yml`
-2. the configurations by injecting via ENV/VCAP_SERVICES/Config Server using ___Steeltoe integration___
-3. by removing all Windows registry dependencies
-
-BECAUSE I want all the application-specific properties, settings and configuration to be _externalized_ from the _replatformed_ application.
+1. the applicaton to the latest .NET framework v4.7 or greater.
+2. for MVC applications, its preferable to upgrade to .NET CORE 2.X or greater.
+BECAUSE I want to make use of Steeltoe and other .NetStandard libraries.
 
 ***Acceptance Criteria***
-- all properties must be defined in the CF `manifest.yml`
+- a recipe outlining the techniques used in the migration of MVC apps to the .NET CORE must be created and reviewed with the team. 
+- the migrated .NET application should run without any errors in the local paring station.",https://www.pivotaltracker.com/story/show/159971825,
+159971811,"3. Migrate application properties, configuration and registry","12f-config, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
+I WANT to migrate ...
+1. the applicaton settings to the CF `manifest.yml`
+2. the configurations by injecting via ENV/VCAP_SERVICES/Config Server using ___Steeltoe integration___
+3. by removing all Windows registry dependencies
+and tune the basic properties like memory, disk space etc.,
+BECAUSE I want all the application-specific settings and configuration to be _externalized_ from the _replatformed_ application.
+
+***Acceptance Criteria***
+- all settings must be defined in the CF `manifest.yml`
 - the application is able to access the configurations in the _following order_
    1. AppSettings.json
    2. Environment Variables
-   3. VCAP services
+   3. VCAP services§§
    4. Config Server
 - the _replatformed application_ can be run in PCF after the _removal_ of the _registry dependencies_
-- a recipe outlining the techniques used in the migration of properties must be created and reviewed with the team.  "
-3. Migrate to Cloud Native Logging,"12f-logs, replatform (.net), replatform-dot-net",feature,"		AS an PRODUCT OWNER
+- a recipe outlining the techniques used in the migration of properties must be created and reviewed with the team. ",https://www.pivotaltracker.com/story/show/159971811,
+159971813,4. Migrate to Cloud Native Logging,"12f-logs, replatform (.net), replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"			AS a PRODUCT OWNER
 I WANT to configure the _replatformed_ <acme> .NET app to support _cloud native logging_  
 BECAUSE I want the _replatformed_ <acme> app to be _12 Factor_ compliant for Logging
 
 ***Acceptance Criteria***
-- _replatformed_  <acme> .NET app should _only_ write to **STDOUT**.
-- _logging facade_ used instead of specific logging implementation.
+- _replatformed_  <acme> .NET app should _only_ write to **STDOUT** and **STDERR**.
 - NO logging to files on local OR remote filesystems.
-- a consistent log format across the entire _replatformed_  <acme> .NET app."
-4. Migrate File Operations to use Cloud Object Storage,"12f-backing-services, replatform-dot-net",feature,"	AS an PRODUCT OWNER
+- _Structured logging_ using  _Seri-log_ or _Custom_ logging frameworks.
+- a consistent log format across the entire _replatformed_  <acme> .NET app.
+- a recipe outlining the techniques used in the migration of logging functionality must be created and, reviewed with the team.  ",https://www.pivotaltracker.com/story/show/159971813,
+159971814,5. Migrate File Operations to use Cloud Object Storage,"12f-backing-services, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
 I WANT to migrate _reading from_ or _writing to_ files on the local/remote filesystems to a _no-sql_ database or _cloud object storage_ (S3),
 BECAUSE I want the _replatformed_ application to be deployable in PCF and, the file systems appear as services.
 
 ***Acceptance Criteria***
 - the application can be run in PCF after _removal_ of the local/remote filesystem dependencies
-- the application is able to read or write to a file in _cloud object storage_ S3 or _no-sql_  database."
-5. Migrate in-memory caching to Cloud Cache,"12f-backing-services, replatform-dot-net",feature,"	AS a PRODUCT OWNER
+- the application is able to read or write to a file in _cloud object storage_ S3 or _no-sql_  database.",https://www.pivotaltracker.com/story/show/159971814,
+159971815,6. Migrate in-memory caching to Cloud Cache/Distributed Cache,"12f-backing-services, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
 I WANT to migrate the _in-memory caches_ in the <acme> .NET application to a _distributed cloud cache_,  
 BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
 
 ***Acceptance Criteria***
 - the _replatformed_ application should use a standard cloud cache (Redis).
-"
-6. Configure actuator/health-checks,"12f-port-binding, replatform-dot-net",feature,"		AS an PRODUCT OWNER
+- a recipe outlining the techniques used in the migration to distributed cache using _Steeltoe_ must be created and, reviewed with the team.  ",https://www.pivotaltracker.com/story/show/159971815,
+159971824,6. Migrate Secrets to Vault,"12f-backing-services, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
+I WANT to migrate the _secrets_ in the <acme> .NET application to a _vault_,  
+BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
+
+***Acceptance Criteria***
+- the _replatformed_ application should only use _vault_ when running in PCF and, should **not** use access/use any _SMS files_.
+",https://www.pivotaltracker.com/story/show/159971824,
+159971823,7. Migrate Session Handling to Cloud,"12f-backing-services, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
+I WANT to migrate the _in-application_ session handling capabilities in the <acme> .NET application to a _distributed cloud cache_,  
+BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
+
+***Acceptance Criteria***
+- the _replatformed_ application should use a standard cloud cache (Redis) for storing/management of the session related information.
+- a recipe outlining the steps/techniques used to migrate  the Session Handling to Cloud must be created and, reviewed with the team. 
+",https://www.pivotaltracker.com/story/show/159971823,
+159971827,8. Configure Windows Authentication using the Token based security,"12f-authentication, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"	AS a PRODUCT OWNER
+I WANT to configure the _authentication_ mechanism appropriately in case the <acme> .NET application uses Windows authentication,  
+BECAUSE currently PCF does _not_ support Windows authentication.
+
+***Acceptance Criteria***
+- the _replatformed_ application should continute to support existing Windows Authentication logins.
+- the alterantive mechanism is to use security tokens from external identity providers (UAA or Siteminder etc.)
+",https://www.pivotaltracker.com/story/show/159971827,
+159971816,9. Configure actuator/health-checks,"12f-port-binding, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"			AS a PRODUCT OWNER
 I WANT to expose operational (_health, metrics, info, dump, env_) information of the _replatformed_ <acme> .NET app,
 BECAUSE I want to monitor the application/database state, gather metrics and understand traffic for the _replatformed_ <acme> .NET.
 
@@ -56,8 +91,9 @@ BECAUSE I want to monitor the application/database state, gather metrics and und
 - _replatformed_ <acme> .NET app uses ___Steeltoe Management/Health contributors___.
 -  /health and /info are the only enabled endpoints by default.
 - /health will display only the _Status: UP or DOWN_ for unauthorized access over HTTP.
-- /info will display the _application name, description and version_."
-"7. Unit, Integration and Smoke Tests for the <acme> .NET application","12f-build-release-run, replatform-dot-net",feature,"	AS a PRODUCT OWNER
+- /info will display the _application name, description and version_.
+- a recipe outlining the steps/techniques used to configure the actuators/health checks in an application must be created and, reviewed with the team. ",https://www.pivotaltracker.com/story/show/159971816,
+159971817,"10. Unit, Integration and Smoke Tests for the <acme> .NET application","12f-build-release-run, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
 I WANT to create unit, integration, functional and smoke tests for the <acme> .NET application
 BECAUSE I want to incorporate TDD principles, improve code quality and test coverage.
 
@@ -65,8 +101,9 @@ BECAUSE I want to incorporate TDD principles, improve code quality and test cove
 - the tests follow the _given_, _when_, _then_ format.
 - the unit, integration and functional tests can be executed independently OR as a group.
 - the unit tests use _mocks_ and _stubs_ for dependencies. 
-- unit, integration and functional tests exist in separate modules in the codebase."
-8. Build/deploy replatformed <acme> .NET app WITHOUT the CI/CD pipeline,"12f-build-release-run, replatform-dot-net",feature,"	AS a PRODUCT OWNER
+- unit, integration and functional tests exist in separate modules in the codebase.
+- at the minimum we require integration and smoke tests.",https://www.pivotaltracker.com/story/show/159971817,
+159971818,11. Build/deploy replatformed <acme> .NET app WITHOUT the CI/CD pipeline,"12f-build-release-run, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
 I SHOULD be able to build the _replatformed_ .NET application using a standard build tool and, deploy the application to the PCF using CF CLI from the paring station.
 BECAUSE I want to ensure the build/deploy from the paring stations is successful.
 
@@ -74,40 +111,33 @@ BECAUSE I want to ensure the build/deploy from the paring stations is successful
 - _local_ build on the paring station.
 - _deploy_ to Client's PCF using CF CLI from the paring station.
 - _verify_ the application was deployed successfully using the PCF App Console.
-- verify the app is receiving traffic by accessing actuator url OR the index/landing page.
-"
-9. Setup CI/CD Pipeline for the <acme> .NET application,"12f-build-release-run, replatform-dot-net",feature,"	AS a PRODUCT OWNER
+- verify the app is receiving traffic by accessing actuator url OR the index/landing page.",https://www.pivotaltracker.com/story/show/159971818,
+159971819,12. Setup CI/CD Pipeline for the <acme> .NET application,"12f-build-release-run, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
 I SHOULD have the ability for automated build and deploy of the the _replatformed_ <acme> .NET application to PCF using CI/CD
 BECAUSE I want to ensure the automated build/deploy pipelines are configured and tested _before_ regular use.
 
 ***Acceptance Criteria***
-- codebase is under SCM (Git).
+- codebase is under SCM (_Git_ or _similar_).
 - dependency management using artifacts repository
 - CI/CD tools uses the application-specific SCM repo and build/packaging tool.
 - verify build and deploy to PCF _with_ manual intervention.
 - verify build and deploy to PCF _without_ manual intervention.
 - verify the application was deployed successfully using the PCF App Console.
-- verify the app is receiving traffic by accessing actuator url OR the index/landing page.
-"
-10. Automatic build/deploy of the <acme> .NET application to PCF,"12f-build-release-run, replatform-dot-net",feature,"	AS a PRODUCT OWNER
+- verify the app is receiving traffic by accessing actuator url OR the index/landing page.",https://www.pivotaltracker.com/story/show/159971819,
+159971822,13. Automatic build/deploy of the <acme> .NET application to PCF,"12f-build-release-run, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"		AS a PRODUCT OWNER
 I SHOULD have the ability for **automated** build and deployment of the _replatformed_ <acme> .NET app to PCF,
 BECAUSE I want to _eliminate_ the manual build/deploy process for the _replatformed_ <acme> .NET application.
 
 ***Acceptance Criteria***
 - build and deploy the application to PCF using CI/CD pipelines without _manual intervention_.
 - verify the application was _deployed successfully_ using the PCF App Console.
-- verify the application is _receiving traffic_."
-11. Migrate Session Handling to Cloud,"12f-backing-services, replatform-dot-net",feature,"	AS a PRODUCT OWNER
-I WANT to migrate the _in-application_ session handling capabilities in the <acme> .NET application to a _distributed cloud cache_,  
-BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
+- verify the application is _receiving traffic_.",https://www.pivotaltracker.com/story/show/159971822,
+159971826,14. deploy and testing of the <acme> .NET application on multiple PCF instances,"12f-concurrency, replatform-dot-net",,,,feature,,unscheduled,"Aug 22, 2018",,,Prashanth Belathur,"	AS a PRODUCT OWNER
+I SHOULD have the ability to deploy the _replatformed_ <acme> .NET app to multiple PCF instances,
+BECAUSE I want to have the ability to scale the application _manually._
 
 ***Acceptance Criteria***
-- the _replatformed_ application should use a standard cloud cache (Redis) for storing/management of the session related information.
-"
-12. Migrate Keystore to Vault,"12f-backing-services, replatform-dot-net",feature,"	AS a PRODUCT OWNER
-I WANT to migrate the _keystore/SMS files_ in the <acme> .NET application to a _vault_,  
-BECAUSE I want the the _replatformed_ <acme> .NET app to be _12 Factor_ compliant.
-
-***Acceptance Criteria***
-- the _replatformed_ application should only use _vault_ when running in PCF and, should **not** use access/use any _SMS files_.
-"
+- build and deploy the application to PCF using CI/CD pipelines without _manual intervention_.
+- verify the application was _deployed successfully_ using the PCF App Console.
+- verify the application is _receiving traffic_.
+- verify the application scaling is successful, without any distributed cache/session errrors.",https://www.pivotaltracker.com/story/show/159971826,
