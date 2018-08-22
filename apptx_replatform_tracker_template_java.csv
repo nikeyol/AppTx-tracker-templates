@@ -1,5 +1,5 @@
-Id,Title,Labels,Iteration,Iteration Start,Iteration End,Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Owned By
-159804913,1. Lift and Shift the <acme> application to Spring Boot,"12f-processes, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+Title,Labels,Type,Description
+1. Lift and Shift the <acme> application to Spring Boot,"15F-processes, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to create a Spring Boot application using <acme> application codebase using the _lift_ and _shift_ technique,
 BECAUSE I want to build/run the _replatformed_ <acme> application locally on the paring stations.
 
@@ -7,8 +7,8 @@ BECAUSE I want to build/run the _replatformed_ <acme> application locally on the
 - the _entire codebase_ of the <acme> application be migrated into the Spring Boot application.
 - verify the Spring Boot application can be built with _minimum code changes_ and, run locally on the paring stations.
 - the _minimum code changes_ should be documented in this tracker ticket.
-",https://www.pivotaltracker.com/story/show/159804913,
-159804914,"2. Code Organization, Dependency Management and Compilation of the <acme> Spring Boot app","12f-codebase, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+"
+"2. Code Organization, Dependency Management and Compilation of the <acme> Spring Boot app","15F-codebase, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to ensure:
 1. the codebase is built by a modern build tool such as Maven or Gradle
 2. dependencies for the builds are resolved from _non local_ artifact repositories (_Nexus, Artifactory, S3_).
@@ -20,15 +20,15 @@ BECAUSE I want a standard codebase structure and build mechanism.
 - verify there are **NO** _local_ repositories defined in `pom.xml`.
 - verify use of remote artifact repositories to resolve dependencies.
 - application can be build successfully into a deployable package using _maven or gradle CLI_ on the paring stations.
-",https://www.pivotaltracker.com/story/show/159804914,
-159804915,3. Setup Dedicated Application Git Repository,"12f-codebase, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+"
+3. Setup Dedicated Application Git Repository,"15F-codebase, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to setup repository in client's local or external Git to store codebase for the replatformed <acme> application
 BECAUSE I want a standard SCM mechanism for the codebase.
 
 ***Acceptance Criteria***
 - a Git repository containing a markdown file with the project overview and source code for the replatformed <acme> application.
-- all Pivots and Clients on the project have the _full access_ to the repository.",https://www.pivotaltracker.com/story/show/159804915,
-159804916,4. Migrate application properties/settings,"12f-config, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- all Pivots and Clients on the project have the _full access_ to the repository."
+4. Migrate application properties/settings,"15F-config, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to migrate all the properties/settings of the <acme> application to the Spring Boot's `application.yml`
 BECAUSE I want all the application-specific properties to be stored in a _single file_ in the yml format.
 
@@ -36,8 +36,8 @@ BECAUSE I want all the application-specific properties to be stored in a _single
 - all properties must be defined in the `application.yml`.
 - `application.properties` should **not** exist in the codebase.
 - any property that will change during deployment should be specified in the `manifest.yml`.
-- a recipe outlining the techniques used in the migration of properties must be created and reviewed with the team.  ",https://www.pivotaltracker.com/story/show/159804916,
-159804917,5. Migrate to Cloud Native Logging,"12f-logs, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- a recipe outlining the techniques used in the migration of properties must be created and reviewed with the team.  "
+5. Migrate to Cloud Native Logging,"15F-logs, 15F-telemetry, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to configure the <acme> Spring Boot app to support _cloud native logging_  
 BECAUSE I want the <acme> Spring Boot app to be _12 Factor_ compliant for Logging
 
@@ -45,15 +45,15 @@ BECAUSE I want the <acme> Spring Boot app to be _12 Factor_ compliant for Loggin
 - <acme> Spring Boot app should _only_ write to **STDOUT**.
 - _logging facade_ used instead of specific logging implementation.
 - NO logging to files on local or remote filesystems.
-- a consistent log format across the entire <acme> Spring Boot app.",https://www.pivotaltracker.com/story/show/159804917,
-159804918,6. Migrate JNDI configurations,"12f-config, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- a consistent log format across the entire <acme> Spring Boot app."
+6. Migrate JNDI configurations,"15F-config, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to migrate JNDI items from the existing <acme> app to the <acme> Spring Boot app
 BECAUSE I want to configure JNDI items as Spring beans in the <acme> Spring Boot app to enable _auto detection and wiring_
 
 ***Acceptance Criteria***
 - **NO** JNDI use in the <acme> Spring Boot app.
-- all the JNDI items are defined as individual bean(s) using @Bean annotation inside one or more Configuration class.",https://www.pivotaltracker.com/story/show/159804918,
-159804919,7. Migrate Database Configurations,"12f-config, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- all the JNDI items are defined as individual bean(s) using @Bean annotation inside one or more Configuration class."
+7. Migrate Database Configurations,"15F-config, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to migrate database configurations (_datasources, properties_ etc) from the existing <acme> app to the <acme> Spring Boot app
 BECAUSE I want to configure database configurations as Spring beans in the <acme> Spring Boot app to enable _auto detection and wiring_
 
@@ -61,8 +61,8 @@ BECAUSE I want to configure database configurations as Spring beans in the <acme
 
 - NO JNDI-based datasources exists in the <acme> Spring Boot app.
 - all the datasources are defined as individual bean(s) using @Bean annotation inside one or more Configuration class.
-- the _database connections_ and _driver properties_ are defined in the `application.yml`",https://www.pivotaltracker.com/story/show/159804919,
-159804920,8. Migrate Messaging Configurations,"12f-config, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- the _database connections_ and _driver properties_ are defined in the `application.yml`"
+8. Migrate Messaging Configurations,"15F-config, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to migrate messaging components (_connections, properties, templates, transformers_ etc) from the existing <acme> app to the <acme> Spring Boot app
 BECAUSE I want to configure messaging components as Spring beans in the <acme> Spring Boot app to enable _auto detection and wiring_
 
@@ -71,15 +71,15 @@ BECAUSE I want to configure messaging components as Spring beans in the <acme> S
 - NO JNDI-based messaging components exist in the <acme> Spring Boot app.
 - all the messaging components are defined as individual bean(s) using @Bean annotation inside one or more Configuration class.
 - the messaging _connections/properties_ are defined in the `application.yml`.
-- leverage the Spring JMS template support in Spring Boot. ",https://www.pivotaltracker.com/story/show/159804920,
-159804921,9. Migrate Security Configurations,"12f-config, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- leverage the Spring JMS template support in Spring Boot. "
+9. Migrate Security Configurations,"15F-config, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to migrate security configurations (_certificates, encryption methods, public/private keys, properties_ etc) from the existing <acme> app to the <acme> Spring Boot app
 BECAUSE I want to configure security configurations as per Spring Security framework in the <acme> Spring Boot app.
 
 ***Acceptance Criteria***
 - NO _custom_ security configurations exists in the <acme> Spring Boot app.
-- the RBAC in the existing <acme> app is implemented in the <acme> Spring Boot app.",https://www.pivotaltracker.com/story/show/159804921,
-159804922,10. Configure actuator/health-checks,"12f-logs, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- the RBAC in the existing <acme> app is implemented in the <acme> Spring Boot app."
+10. Configure actuator/health-checks,"15F-telemetry, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to expose operational (_health, metrics, info, dump, env_) information of the <acme> Spring Boot app
 BECAUSE I want to monitor the application/database state, gather metrics and understand traffic for the <acme> Spring Boot app.
 
@@ -87,8 +87,8 @@ BECAUSE I want to monitor the application/database state, gather metrics and und
 - <acme> Spring Boot application uses Spring Boot 2.x Actuator
 -  /health and /info are the only enabled endpoints by default.
 - /health will display only the _Status: UP or DOWN_ for unauthorized access over HTTP.
-- /info will display the _application name, description and version_.",https://www.pivotaltracker.com/story/show/159804922,
-159804923,11. Build/deploy <acme> Spring Boot app WITHOUT the CI/CD pipeline,"12f-build-release-run, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"			AS an PRODUCT OWNER
+- /info will display the _application name, description and version_."
+11. Build/deploy <acme> Spring Boot app WITHOUT the CI/CD pipeline,"15F-build-release-run, replatform-java",feature,"			AS an PRODUCT OWNER
 I SHOULD be able to build the application using maven or gradle and, deploy the application to the PCF using CF CLI from the paring station.
 BECAUSE I want to ensure the build/deploy from the paring stations is successful.
 
@@ -97,8 +97,8 @@ BECAUSE I want to ensure the build/deploy from the paring stations is successful
 - _deploy_ to Clients's PCF using CF CLI from the paring station.
 - _verify_ the application was deployed successfully using the PCF App Console.
 - verify the app is receiving traffic by accessing actuator url OR the index/landing page.
-",https://www.pivotaltracker.com/story/show/159804923,
-159804924,"12. Unit, Integration and Smoke Tests for the <acme> Spring Boot app","12f-build-release-run, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+"
+"12. Unit, Integration and Smoke Tests for the <acme> Spring Boot app","15F-build-release-run, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to create unit, integration, functional and smoke tests for the <acme> Spring Boot app
 BECAUSE I want to incorporate TDD principles, improve code quality and test coverage for the <acme> Spring Boot app.
 
@@ -106,8 +106,8 @@ BECAUSE I want to incorporate TDD principles, improve code quality and test cove
 - the tests follow the _given_, _when_, _then_ format.
 - the unit, integration and functional tests can be executed independently OR as a group.
 - the unit tests use _mocks_ and _stubs_ for dependencies. 
-- unit, integration and functional tests exist in separate modules in the codebase.",https://www.pivotaltracker.com/story/show/159804924,
-159804925,13. Enable Code Quality Checks for the <acme> Spring Boot app,"12f-codebase, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- unit, integration and functional tests exist in separate modules in the codebase."
+13. Enable Code Quality Checks for the <acme> Spring Boot app,"15F-codebase, replatform-java",feature,"		AS an PRODUCT OWNER
 I WANT to incorporate code quality check for the <acme> Spring Boot app codebase
 BECAUSE I want to measure _code coverage_, _cyclomatic complexity_ and, detect _possible bugs_, _suboptimal codes_ and other _bad practices_.
 
@@ -115,8 +115,8 @@ BECAUSE I want to measure _code coverage_, _cyclomatic complexity_ and, detect _
 - the code coverage and cyclomatic complexity report is automatically generated for each build.
 - static code analysis is also automatically executed for each build.
 - the builds _should fail_ if the code coverage is _below_ a specified threshold.
-",https://www.pivotaltracker.com/story/show/159804925,
-159804926,14. Setup CI/CD Pipeline for the <acme> Spring Boot app,"12f-build-release-run, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+"
+14. Setup CI/CD Pipeline for the <acme> Spring Boot app,"15F-build-release-run, replatform-java",feature,"		AS an PRODUCT OWNER
 I SHOULD have the ability for automated build and deploy of the the <acme> Spring Boot app to PCF using CI/CD
 BECAUSE I want to ensure the automated build/deploy pipelines are configured and tested before regular use.
 
@@ -130,20 +130,20 @@ BECAUSE I want to ensure the automated build/deploy pipelines are configured and
 - verify the app is receiving traffic by accessing actuator url OR the index/landing page.
 
 **Implementation notes**
-- Spring Cloud tools and migration details will come here",https://www.pivotaltracker.com/story/show/159804926,
-159804927,15. Automatic build/deploy of the <acme> Spring Boot app to PCF ,"12f-build-release-run, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"		AS an PRODUCT OWNER
+- Spring Cloud tools and migration details will come here"
+15. Automatic build/deploy of the <acme> Spring Boot app to PCF ,"15F-build-release-run, replatform-java",feature,"		AS an PRODUCT OWNER
 I SHOULD have the ability for automated build and deployment of the <acme> Spring Boot app to PCF
 BECAUSE I want to eliminate the manual build/deploy process for the <acme> Spring Boot app.
 
 ***Acceptance Criteria***
 - build and deploy the <acme> Spring Boot app to PCF using CI/CD pipelines without _manual intervention_.
 - verify the <acme> Spring Boot app was _deployed successfully_ using the PCF App Console.
-- verify the <acme> Spring Boot app is _receiving traffic_ by accessing actuator url OR the index/landing page.",https://www.pivotaltracker.com/story/show/159804927,
-159804928,16. Externalize configuration in Spring Cloud Config Server,"12f-config, replatform-java",,,,feature,,unscheduled,"Aug 15, 2018",,,Prashanth Belathur,"	AS an PRODUCT OWNER
+- verify the <acme> Spring Boot app is _receiving traffic_ by accessing actuator url OR the index/landing page."
+16. Externalize configuration in Spring Cloud Config Server,"15F-backing-services, replatform-java",feature,"	AS an PRODUCT OWNER
 I WANT to externalize the configuration of <acme> Spring Boot app so that I can control changes to this configuration for running applications
 BECAUSE I need to control access seperately from the source code and need to reconfigure running applications without a rebuild/restart.
 
 ***Acceptance Criteria***
 - The application manifest binds the application to a config-service instance
 - The application's local application properties/yml files have only basic and local configuration, and the rest is pulled from config-server
-- The application successfully runs and passes all smoke tests in PCF when connected to config server",https://www.pivotaltracker.com/story/show/159804928,
+- The application successfully runs and passes all smoke tests in PCF when connected to config server"
