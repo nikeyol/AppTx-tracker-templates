@@ -82,7 +82,7 @@ BECAUSE currently PCF does _not_ support Windows authentication.
 - the _replatformed_ application should continute to support existing Windows Authentication logins.
 - the alterantive mechanism is to use security tokens from external identity providers (UAA or Siteminder etc.)
 "
-9. Configure Actuator/Healthchecks,"15F-port-binding, replatform-dot-net",feature,"			AS a PRODUCT OWNER
+9. Configure Actuator/Healthchecks,"15F-telemetry, replatform-dot-net",feature,"			AS a PRODUCT OWNER
 I WANT to expose operational (_health, metrics, info, dump, env_) information of the _replatformed_ <acme> .NET app,
 BECAUSE I want to monitor the application/database state, gather metrics and understand traffic for the _replatformed_ <acme> .NET.
 
