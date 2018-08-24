@@ -23,6 +23,10 @@ The template file is _imported_ into the Pivotal Tracker to create a project for
 - The _number_ in the User Story title indicates the _order/sequence_ of stories in a project.
 - Each story is also _tagged_ with a ***15 Factor category***.
 
+- _Sample_ Pivotal Tracker Projects created using the _above_ templates:
+ - [Pivotal Tracker project for Java application replatform](https://www.pivotaltracker.com/n/projects/2188648)
+ - [Pivotal Tracker project for .NET application replatform](https://www.pivotaltracker.com/n/projects/2192802)
+
 ## Acknowledgments
 - Rohit Kelapure
 - Matt Campbell
