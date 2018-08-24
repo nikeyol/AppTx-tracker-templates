@@ -3,7 +3,7 @@
 
 ## Author
 **Prashanth Belathur** - pbelathur@pivotal.io
-
+***
 The _templates_ in this repo can be used to create a tracker project with a common set of user stories with well-defined acceptance criteria for the AppTx _replatform_ and _modernization_ efforts and, helps to reduce time/effort to create trackers during customer engagements.
 
 The template file is _imported_ into the Pivotal Tracker to create a project for _each_ application _replatform_ or _modernization_ effort in an AppTx engagement.
