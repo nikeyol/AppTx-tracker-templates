@@ -10,22 +10,21 @@ The template file is _imported_ into the Pivotal Tracker to create a project for
 ## Author
 **Prashanth Belathur** - pbelathur@pivotal.io
 
-## Replatform tracker templates
-- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_tracker_template_java.csv)
-- [.NET](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_tracker_template_dotnet.csv)
+## Pivotal Tracker Templates
+- [Replatform - Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_tracker_template_java.csv)
+- [Replatform - .NET](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_replatform_tracker_template_dotnet.csv)  
+- [Modernization - Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_modernization_tracker_template_java.csv)
+- _Modernization - .NET_
 
-## Modernization tracker templates
-- [Java](https://github.com/pivotalservices/AppTx-tracker-templates/blob/master/apptx_modernization_tracker_template_java.csv)
-- .NET
+## Pivotal Tracker _Sample_ Projects
+- [Pivotal Tracker project for Java application replatform](https://www.pivotaltracker.com/n/projects/2188648)
+- [Pivotal Tracker project for .NET application replatform](https://www.pivotaltracker.com/n/projects/2192802)
 
 ## Notes:
+- All the _template files_ are in **CSV** format and, are ready for _import_ into the Pivotal Tracker.
 - The `<acme>` placeholder in the template file should be replaced with the _actual_ application name _before_ importing the template into the Pivotal Tracker to create a new Tracker project.
 - The _number_ in the User Story title indicates the _order/sequence_ of stories in a project.
 - Each story is also _tagged_ with a ***15 Factor category***.
-
-- _Sample_ Pivotal Tracker Projects created using the _above_ templates:
- - [Pivotal Tracker project for Java application replatform](https://www.pivotaltracker.com/n/projects/2188648)
- - [Pivotal Tracker project for .NET application replatform](https://www.pivotaltracker.com/n/projects/2192802)
 
 ## Acknowledgments
 - Rohit Kelapure
